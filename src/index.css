@@ -6,8 +6,12 @@ body {
 	background: linear-gradient(to right, #6A82FB, #FC5C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.kdZMGe {
+div.kdZMGe {
 	margin: 50px auto;
+	box-shadow: 0px 0px 20px 5px rgba(30, 16, 16, 0.42);
+	font-family: Helvetica;
+	font-size: 12px;
+	letter-spacing: .05em;
 }
 
 div.glfuN {
