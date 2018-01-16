@@ -30,11 +30,6 @@ const initial = [
         ],
     },
     {
-        id: 'select',
-        user: true,
-        trigger: 'summary'
-    },
-    {
         id: 'summary',
         component: <Review />,
         asMessage: true,

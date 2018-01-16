@@ -6,28 +6,27 @@ class Review extends Component {
         super(props);
 
         this.state = {
-            select: '',
+            summary: '',
             apple: ''
         };
     }
 
     componentDidMount() {
         const { steps } = this.props;
-        const { select, apple } = steps;
-        this.setState({ select, apple });
+        const { summary, apple } = steps;
+        this.setState({ summary, apple });
     }
 
     render() {
-        const { select, apple } = this.state;
+        const { summary, apple } = this.state;
+        console.log(summary)
         return (
             <div style={{ width: '100%' }}>
                 <h3>Summary</h3>
                 <table>
                     <tbody>
                         <tr>
-                            <td>Phone</td>
-                            <td>{select.value}</td>
-                            <td>iPhone</td>
+                            <td>{summary.value}</td>
                         </tr>
                         <tr>
                             <td></td>

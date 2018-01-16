@@ -11,7 +11,7 @@ const phones = [
     },
     {
     	id: 'phones3',
-    	message: "Want to check Samsung or Apple?",
+    	message: "Want to check out Samsung or Apple devices?",
     	trigger: 'phones4'
     },
     {
@@ -25,8 +25,11 @@ const phones = [
     },
     {
     	id: 'apple',
-    	message: 'Would you like to see iphone7 or iphone8',
-    	trigger: 'select'
+    	options: [
+            { value: 'Phones & Tablets', label: 'Phones & Tablets', trigger: 'summary' },
+            { value: 'Drones', label: 'Drones', trigger: 'summary' },
+            { value: 'Gaming & VR Devices', label: 'Gaming & VR Devices', trigger: 'summary' }
+        ]
     }
 ]
 
