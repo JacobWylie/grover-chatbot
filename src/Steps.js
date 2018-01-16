@@ -1,3 +1,5 @@
+import React from 'react';
+import Review from './Review';
 import phones from './phones';
 import drones from './drones';
 import gaming from './gaming';
@@ -28,7 +30,28 @@ const initial = [
         ],
     },
     {
-        id: 'go back',
+        id: 'select',
+        user: true,
+        trigger: 'summary'
+    },
+    {
+        id: 'summary',
+        component: <Review />,
+        asMessage: true,
+        trigger: 'end'
+    },
+    {
+        id: 'end',
+        message: 'Type "back" to start over',
+        trigger: 'end2' 
+    },
+    {
+        id: 'end2',
+        user: true,
+        trigger: ({value}) => value.toLowerCase()
+    },
+    {
+        id: 'back',
         message: 'Going Back......',
         trigger: 'category'
     },

@@ -1,7 +1,3 @@
-const link = document.createElement('a');
-link.setAttribute('href', 'https://getgrover.com/de-de/products/iphone-8-64gb');
-link.innerHTML = 'Iphone';
-
 const phones = [
     {
         id: 'phones1',
@@ -10,7 +6,7 @@ const phones = [
     },
     {
     	id: 'phones2',
-    	message: 'Type "go back" at anyime to start over',
+    	message: 'Type "back" at anyime to start over',
     	trigger: 'phones3'
     },
     {
@@ -29,7 +25,8 @@ const phones = [
     },
     {
     	id: 'apple',
-    	message: link.toString(),
+    	message: 'Would you like to see iphone7 or iphone8',
+    	trigger: 'select'
     }
 ]
 
