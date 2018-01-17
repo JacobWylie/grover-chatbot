@@ -20,15 +20,15 @@ td img {
 a {
 	font-size: 18px;
 	color: white;
-	transition: opacity 0.15s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 
 .center td {
-	transition: opacity 0.15s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 
 .center td:hover {
-	opacity: .5;
+	opacity: .7;
 }
 
 div.kdZMGe {
@@ -70,11 +70,10 @@ div.jgMjlR {
 	background: #4967fc;
 }
 
-.rsc .rsc-container 
 
 @media screen and (max-width: 568px) {
 	div.kdZMGe {
-		width: 80%;
+		width: 350px;
 	}
 }
 

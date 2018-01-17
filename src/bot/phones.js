@@ -1,5 +1,7 @@
 import validator from './validator';
 
+const phoneTypes = ['apple', 'samsung', 'back'];
+
 const phones = [
     {
         id: 'phones1',
@@ -14,7 +16,12 @@ const phones = [
     {
     	id: 'phones3',
     	user: true,
-    	validator: validator,
+    	validator: value => {
+            if (!phoneTypes.includes(value.toLowerCase())) {
+                return "Sorry that is not a valid answer";
+            }
+            return true;
+        },
     	trigger: ({value}) => value.toLowerCase()
     },
     {

@@ -7,6 +7,7 @@ import computers from './computers';
 import wearables from './wearables';
 import home from './home';
 import validator from './validator';
+import productDetails from '../bot/productDetails';
 
 const initial = [
     {
@@ -33,7 +34,14 @@ const initial = [
     {
         id: 'summary',
         user: true,
-        validator: validator,
+        validator: value => {
+            let product = value.replace(/ +/g, "");
+            let test = Object.keys(productDetails);
+            if(!test.includes(product)) {
+                return 'Sorry that is not a valid entry!'
+            }
+            return true;
+        },
         trigger: 'summary2'
     },
     {
