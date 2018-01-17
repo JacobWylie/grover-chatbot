@@ -10,4 +10,4 @@ const computers = [
     }
 ]
 
-export default computers
+export default computers;

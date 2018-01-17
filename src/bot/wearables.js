@@ -5,4 +5,4 @@ const wearables = [
     }
 ]
 
-export default wearables
+export default wearables;

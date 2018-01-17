@@ -6,4 +6,4 @@ const drones = [
     }
 ]
 
-export default drones
+export default drones;

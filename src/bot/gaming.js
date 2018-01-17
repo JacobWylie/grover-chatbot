@@ -6,4 +6,4 @@ const gaming = [
     }
 ]
 
-export default gaming
+export default gaming;

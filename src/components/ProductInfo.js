@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import productDetails from './productDetails';
+import productDetails from '../bot/productDetails';
 
 class ProductInfo extends Component {
 	render() {

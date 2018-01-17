@@ -1,5 +1,5 @@
 import React from 'react';
-import Product from './Product';
+import Product from '../components/Product';
 import phones from './phones';
 import drones from './drones';
 import gaming from './gaming';
