@@ -8,7 +8,7 @@ const phones = [
     },
     {
     	id: 'phones2',
-    	message: "Would you like to see our Apple or Samsung devices?",
+    	message: "Would you like to view our Apple or Samsung devices?",
     	trigger: 'phones3'
     },
     {
@@ -23,11 +23,11 @@ const phones = [
     },
     {
     	id: 'apple',
-    	message: 'You can see details for an "iPhone 7 128gb", "iPhone 7 32gb", or "iPhone 7 plus"',
+    	message: 'You can see the details for an "iPhone 7 128gb", "iPhone 7 32gb", or "iPhone 7 plus"',
     	trigger: 'summary'
     }
 ]
 
-export default phones
+export default phones;
 
 

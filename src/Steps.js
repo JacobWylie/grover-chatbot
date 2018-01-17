@@ -1,5 +1,5 @@
 import React from 'react';
-import Review from './Review';
+import Product from './Product';
 import phones from './phones';
 import drones from './drones';
 import gaming from './gaming';
@@ -38,7 +38,7 @@ const initial = [
     },
     {
         id: 'summary2',
-        component: <Review />,
+        component: <Product />,
         asMessage: true,
         trigger: 'end'
     },
@@ -57,7 +57,7 @@ const initial = [
 
 const steps = initial.concat(phones, drones, gaming, computers, wearables, home);
 
-export default steps
+export default steps;
 
 
 
