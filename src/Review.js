@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import productDetails from './productDetails';
 
 class Review extends Component {
     constructor(props) {
@@ -7,30 +8,35 @@ class Review extends Component {
 
         this.state = {
             summary: '',
-            apple: ''
         };
     }
 
-    componentDidMount() {
+    componentWillMount() {
         const { steps } = this.props;
-        const { summary, apple } = steps;
-        this.setState({ summary, apple });
+        const { summary } = steps;
+        this.setState({ summary });
     }
 
     render() {
-        const { summary, apple } = this.state;
-        console.log(summary)
+        const { summary } = this.state;
+        let product = summary.value;
+        product = product.replace(/ +/g, "");
         return (
             <div style={{ width: '100%' }}>
-                <h3>Summary</h3>
+                <h3>Product Details</h3>
                 <table>
                     <tbody>
                         <tr>
-                            <td>{summary.value}</td>
+                            <td>{productDetails[product].brand}</td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td>something</td>
+                            <td>{productDetails[product].name}</td>
+                        </tr>
+                        <tr>
+                            <td>{productDetails[product].price}</td>
+                        </tr>
+                        <tr>
+                            <td><a href={productDetails[product].link}>Order Now!</a></td>
                         </tr>
                     </tbody>
                 </table>
