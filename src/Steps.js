@@ -6,16 +6,17 @@ import gaming from './gaming';
 import computers from './computers';
 import wearables from './wearables';
 import home from './home';
+import validator from './validator';
 
 const initial = [
     {
         id: '1',
         message: 'Welcome to the ChatBot! We have a wide variety of products available to rent.',
-        trigger: 'category',
+        trigger: '2',
     },
     {
-        id: 'category',
-        message: "Please click on which type are you interested in?",
+        id: '2',
+        message: "First choose a category to see what's available. You can type 'back' at anytime to start over.",
         trigger: '3',
     },
     {
@@ -31,34 +32,31 @@ const initial = [
     },
     {
         id: 'summary',
+        user: true,
+        validator: validator,
+        trigger: 'summary2'
+    },
+    {
+        id: 'summary2',
         component: <Review />,
         asMessage: true,
         trigger: 'end'
     },
     {
         id: 'end',
-        message: 'Type "back" to start over',
-        trigger: 'end2' 
-    },
-    {
-        id: 'end2',
-        user: true,
-        trigger: ({value}) => value.toLowerCase()
+        options: [
+            { value: 'Start Over', label: 'Start Over', trigger: '3' }
+        ]
     },
     {
         id: 'back',
         message: 'Going Back......',
-        trigger: 'category'
+        trigger: '3'
     },
-    // {
-    //     id: 'review',
-    //     component: <Review />,
-    //     asMessage: true,
-    //     trigger: 'update',
-    // },
 ]
 
 const steps = initial.concat(phones, drones, gaming, computers, wearables, home);
+
 export default steps
 
 

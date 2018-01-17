@@ -1,22 +1,20 @@
+import validator from './validator';
+
 const phones = [
     {
         id: 'phones1',
-        message: 'Great! we have a wide variety of Phones & Tablets for you to choose from!',
+        message: "Great! Let's see what brands are currently available.",
         trigger: 'phones2'
     },
     {
     	id: 'phones2',
-    	message: 'Type "back" at anyime to start over',
+    	message: "Would you like to see our Apple or Samsung devices?",
     	trigger: 'phones3'
     },
     {
     	id: 'phones3',
-    	message: "Want to check out Samsung or Apple devices?",
-    	trigger: 'phones4'
-    },
-    {
-    	id: 'phones4',
     	user: true,
+    	validator: validator,
     	trigger: ({value}) => value.toLowerCase()
     },
     {
@@ -25,13 +23,11 @@ const phones = [
     },
     {
     	id: 'apple',
-    	options: [
-            { value: 'Phones & Tablets', label: 'Phones & Tablets', trigger: 'summary' },
-            { value: 'Drones', label: 'Drones', trigger: 'summary' },
-            { value: 'Gaming & VR Devices', label: 'Gaming & VR Devices', trigger: 'summary' }
-        ]
+    	message: 'You can see details for an "iPhone 7 128gb", "iPhone 7 32gb", or "iPhone 7 plus"',
+    	trigger: 'summary'
     }
 ]
 
 export default phones
+
 
