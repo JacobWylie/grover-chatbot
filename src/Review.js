@@ -22,21 +22,27 @@ class Review extends Component {
         let product = summary.value;
         product = product.replace(/ +/g, "");
         return (
-            <div style={{ width: '100%' }}>
+            <div className="product-details">
                 <h3>Product Details</h3>
                 <table>
                     <tbody>
                         <tr>
-                            <td>{productDetails[product].brand}</td>
+                            <td><span className="product">Brand</span>: {productDetails[product].brand}</td>
                         </tr>
                         <tr>
-                            <td>{productDetails[product].name}</td>
+                            <td><span className="product">Model</span>: {productDetails[product].name}</td>
                         </tr>
                         <tr>
-                            <td>{productDetails[product].price}</td>
+                            <td><span className="product">Specs</span>: {productDetails[product].specs}</td>
                         </tr>
                         <tr>
-                            <td><a href={productDetails[product].link}>Order Now!</a></td>
+                            <td><span className="product">Price</span>: {productDetails[product].price}</td>
+                        </tr>
+                        <tr className="center">
+                            <td><img src={productDetails[product].img} alt='product photo'></img></td>
+                        </tr>
+                        <tr className="center">
+                            <td><a target="_blank" href={productDetails[product].link}>Order Now!</a></td>
                         </tr>
                     </tbody>
                 </table>
