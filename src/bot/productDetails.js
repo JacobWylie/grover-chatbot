@@ -2,7 +2,7 @@ const productDetails = {
 	iphone7128gb: {
 		name: "iPhone 7",
 		specs: '2GB RAM, 128GB, 4.7", 12MP',
-		brand: "Apple",
+		brand: "Apple Iphone",
 		price: "\u20AC44.99/month",
 		link: "https://getgrover.com/de-de/products/iphone-7-128-gb-2818",
 		img: "https://res-5.cloudinary.com/grover/image/upload/c_limit,h_1000,w_1000,q_auto,f_auto/glyj6cga4f2nsh2nwohk.png"
@@ -10,7 +10,7 @@ const productDetails = {
 	iphone732gb: {
 		name: "iPhone 7",
 		specs: '3GB RAM, 32GB, 5.5 ", 12MP',
-		brand: "Apple",
+		brand: "Apple Iphone",
 		price: "\u20AC54.90/month",
 		link: "https://getgrover.com/de-de/products/iphone-7-plus-32gb-2865",
 		img: "https://res-4.cloudinary.com/grover/image/upload/c_limit,h_1000,w_1000,q_auto,f_auto/ohjiwfm2e189otnkjflw.png"
@@ -18,7 +18,7 @@ const productDetails = {
 	iphone7plus: {
 		name: "iPhone 7 Plus",
 		specs: '3GB RAM, 128GB, 5.5 ", 12MP',
-		brand: "Apple",
+		brand: "Apple Iphone",
 		price: "\u20AC79.90/month",
 		link: "https://getgrover.com/de-de/products/iphone-7-plus-128-gb-2821",
 		img: "https://res-1.cloudinary.com/grover/image/upload/c_limit,h_1000,w_1000,q_auto,f_auto/mdv4vuew2pkcurafyrs7.png"
@@ -72,7 +72,7 @@ const productDetails = {
 		img: "https://res-4.cloudinary.com/grover/image/upload/c_limit,h_1000,w_1000,q_auto,f_auto/wehebtj6c2souql95lhs.png"
 	},
 	macbook12: {
-		name: 'Macbook 12"',
+		name: 'Macbook 12',
 		specs: 'Intel Core M-5Y31, 8GB RAM, 256GB SSD, 12"',
 		brand: "Apple",
 		price: "\u20AC99.90/month",
@@ -80,7 +80,7 @@ const productDetails = {
 		img: "https://res-5.cloudinary.com/grover/image/upload/c_limit,h_1000,w_1000,q_auto,f_auto/pj3xwlbdexsno4gcviqd.png"
 	},
 	macbookair11: {
-		name: 'Macbook Air 11"',
+		name: 'Macbook Air 11',
 		specs: 'Intel Core i7-2720QM, 8GB RAM, 512GB SSD, 11"',
 		brand: "Apple",
 		price: "\u20AC154.00/month",
@@ -88,7 +88,7 @@ const productDetails = {
 		img: "https://res-2.cloudinary.com/grover/image/upload/c_limit,h_1000,w_1000,q_auto,f_auto/ck1dl6iseqhrphmla5sm.png"
 	},
 	macbookair13: {
-		name: 'Macbook Air 13"',
+		name: 'Macbook Air 13',
 		specs: 'Intel Core i5-5250U, 4GB RAM, 128GB SSD, 13"',
 		brand: "Apple",
 		price: "\u20AC99.90/month",
@@ -96,7 +96,7 @@ const productDetails = {
 		img: "https://res-3.cloudinary.com/grover/image/upload/c_limit,h_1000,w_1000,q_auto,f_auto/lkx7apkyojc7zxau6dyq.png"
 	},
 	macbookpro13: {
-		name: 'Macbook Pro 13"',
+		name: 'Macbook Pro 13',
 		specs: 'Intel Core i5-6360U, 8GB RAM, 256GB SSD, 13"',
 		brand: "Apple",
 		price: "\u20AC149.90/month",
@@ -122,7 +122,7 @@ const productDetails = {
 	applewatch38mm: {
 		name: 'Apple Watch Series 1 38mm',
 		specs: 'Series 1, stainless steel case, 38mm sports strap black',
-		brand: "Apple",
+		brand: "Apple Watch",
 		price: "\u20AC39.90/month",
 		link: "https://getgrover.com/de-de/products/apple-watch-38mm-black-88",
 		img: "https://res-1.cloudinary.com/grover/image/upload/c_limit,h_1000,w_1000,q_auto,f_auto/d53myo9myovzk3hosnlm.png"
@@ -130,7 +130,7 @@ const productDetails = {
 	applewatch42mm: {
 		name: 'Apple Watch 42mm',
 		specs: 'Series 1, Stainless Steel Case, White Bracelet',
-		brand: "Apple",
+		brand: "Apple Watch",
 		price: "\u20AC59.90/month",
 		link: "https://getgrover.com/de-de/products/apple-watch-42mm-white-87",
 		img: "https://res-2.cloudinary.com/grover/image/upload/c_limit,h_1000,w_1000,q_auto,f_auto/gddvfqsgqqzcooj4xuwt.png"

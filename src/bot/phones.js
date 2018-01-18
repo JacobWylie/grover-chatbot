@@ -16,7 +16,7 @@ const phones = [
     	user: true,
     	validator: value => {
             if (!phoneTypes.includes(value.toLowerCase())) {
-                return "Sorry that is not a valid answer";
+                return "Sorry that is not a valid input"
             }
             return true;
         },

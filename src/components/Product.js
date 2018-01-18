@@ -21,6 +21,7 @@ class Product extends Component {
         const { summary } = this.state;
         let product = summary.value;
         product = product.replace(/ +/g, "");
+        product = product.toLowerCase();
         return (
             <div className="product-details">
                 <h3>Product Details</h3>

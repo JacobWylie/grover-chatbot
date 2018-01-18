@@ -35,13 +35,22 @@ const initial = [
         user: true,
         validator: value => {
             let product = value.replace(/ +/g, "");
-            let test = Object.keys(productDetails);
-            if(!test.includes(product)) {
-                return 'Sorry that is not a valid entry!'
+            product = product.toLowerCase();
+            let productArr = Object.keys(productDetails);
+            if(value.toLowerCase() === 'back') {
+                return true;
+            } else if (!productArr.includes(product)) {
+                return 'Sorry that is not a valid entry!';
             }
             return true;
         },
-        trigger: 'summary2'
+        trigger: ({value}) => {
+            if(value.toLowerCase() === 'back') {
+                return 'back';
+            } else {
+                return 'summary2';
+            }
+        }
     },
     {
         id: 'summary2',
