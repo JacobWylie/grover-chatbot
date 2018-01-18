@@ -1,4 +1,6 @@
-const phoneTypes = ['apple', 'samsung', 'back'];
+import validTypes from './validTypes';
+
+const phoneTypes = ['appleiphone', 'samsung', 'back'];
 
 const phones = [
     {
@@ -8,29 +10,19 @@ const phones = [
     },
     {
     	id: 'phones2',
-    	message: "Would you like to view our Apple or Samsung devices?",
+    	message: 'Would you like to view our "Apple iPhone" or Samsung devices?',
     	trigger: 'phones3'
     },
     {
     	id: 'phones3',
     	user: true,
     	validator: value => {
-            if (!phoneTypes.includes(value.toLowerCase())) {
-                return "Sorry that is not a valid input"
-            }
-            return true;
+            if(!validTypes(value, phoneTypes)) {
+                return "Sorry that is not a valid input";
+            } 
+            return true; 
         },
-    	trigger: ({value}) => value.toLowerCase()
-    },
-    {
-    	id: 'samsung',
-    	message: 'You can see the details for a "Galaxy S8" or a "Galaxy S8 Plus"',
-        trigger: 'summary'
-    },
-    {
-    	id: 'apple',
-    	message: 'You can see the details for an "iPhone 7 128gb", "iPhone 7 32gb", or "iPhone 7 plus"',
-    	trigger: 'summary'
+    	trigger: 'poductDetails'
     }
 ]
 

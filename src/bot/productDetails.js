@@ -1,6 +1,6 @@
 const productDetails = {
 	iphone7128gb: {
-		name: "iPhone 7",
+		name: "iPhone 7 128GB",
 		specs: '2GB RAM, 128GB, 4.7", 12MP',
 		brand: "Apple Iphone",
 		price: "\u20AC44.99/month",
@@ -8,7 +8,7 @@ const productDetails = {
 		img: "https://res-5.cloudinary.com/grover/image/upload/c_limit,h_1000,w_1000,q_auto,f_auto/glyj6cga4f2nsh2nwohk.png"
 	},
 	iphone732gb: {
-		name: "iPhone 7",
+		name: "iPhone 7 32GB",
 		specs: '3GB RAM, 32GB, 5.5 ", 12MP',
 		brand: "Apple Iphone",
 		price: "\u20AC54.90/month",
@@ -32,7 +32,7 @@ const productDetails = {
 		img: "https://res-2.cloudinary.com/grover/image/upload/c_limit,h_1000,w_1000,q_auto,f_auto/r8b89pitr3qmdhqvv0yp.png"
 	},
 	galaxys8plus: {
-		name: "Galaxy S8+",
+		name: "Galaxy S8 Plus",
 		specs: '4GB RAM, 64GB, 6.2 ", 12MP',
 		brand: "Samsung",
 		price: "\u20AC79.90/month",
