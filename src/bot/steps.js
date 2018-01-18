@@ -8,6 +8,7 @@ import wearables from './wearables';
 import home from './home';
 import productChoice from './productChoice';
 import inProductList from './inProductList';
+import brandsAvailable from './brandsAvailable';
 
 const initial = [
     {
@@ -23,13 +24,23 @@ const initial = [
     {
         id: '3',
         options: [
-            { value: 'Phones & Tablets', label: 'Phones & Tablets', trigger: phones[0].id },
-            { value: 'Drones', label: 'Drones', trigger: drones[0].id },
-            { value: 'Gaming & VR Devices', label: 'Gaming & VR Devices', trigger: gaming[0].id },
-            { value: 'Computers', label: 'Computers', trigger: computers[0].id },
-            { value: 'Wearables', label: 'Wearables', trigger: wearables[0].id },
-            { value: 'Smart Home Appliances', label: 'Smart Home Appliances', trigger: home[0].id }
+            { value: 'phone', label: 'Phones & Tablets', trigger: '4' },
+            { value: 'drones', label: 'Drones', trigger: drones[0].id },
+            { value: 'gaming', label: 'Gaming & VR Devices', trigger: gaming[0].id },
+            { value: 'computers', label: 'Computers', trigger: computers[0].id },
+            { value: 'wearables', label: 'Wearables', trigger: wearables[0].id },
+            { value: 'home', label: 'Smart Home Appliances', trigger: home[0].id }
         ],
+    },
+     {
+        id: '4',
+        message: ({previousValue}) => brandsAvailable(previousValue),
+        trigger: '5'
+    },
+    {
+        id: '5',
+        message: 'hi',
+        trigger: 'phones3'
     },
     {
         id: 'productDetails',
