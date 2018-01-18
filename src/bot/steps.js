@@ -6,7 +6,6 @@ import gaming from './gaming';
 import computers from './computers';
 import wearables from './wearables';
 import home from './home';
-import validator from './validator';
 import productDetails from '../bot/productDetails';
 
 const initial = [

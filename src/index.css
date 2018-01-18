@@ -53,21 +53,16 @@ div.glfuN {
 	text-decoration: underline;
 }
 
-a.rsc-os-option-element {
-	background: #4967fc;
-}
-
-div.kFPviT {
-	background: #ff6a8b;
-	color: black;
-}
-
-div.fhAWVE {
-	background: #4967fc;
-}
-
+a.rsc-os-option-element,
+div.fhAWVE,
 div.jgMjlR {
 	background: #4967fc;
+}
+
+div.kFPviT,
+div.ctQJTH {
+	background: #ff6a8b;
+	color: black;
 }
 
 

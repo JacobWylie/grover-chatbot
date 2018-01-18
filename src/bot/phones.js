@@ -1,5 +1,3 @@
-import validator from './validator';
-
 const phoneTypes = ['apple', 'samsung', 'back'];
 
 const phones = [
@@ -26,7 +24,8 @@ const phones = [
     },
     {
     	id: 'samsung',
-    	message: 'Samsung'
+    	message: 'You can see the details for a "Galaxy S8" or a "Galaxy S8 Plus"',
+        trigger: 'summary'
     },
     {
     	id: 'apple',
