@@ -1,6 +1,6 @@
 import validTypes from './validTypes';
 
-const phoneTypes = ['appleiphone', 'samsung', 'back'];
+const phoneTypes = ['apple iphone', 'samsung', 'back'];
 
 const phones = [
     {
@@ -10,19 +10,14 @@ const phones = [
     },
     {
     	id: 'phones2',
-    	message: 'Would you like to view our "Apple iPhone" or Samsung devices?',
+    	message: 'Would you like to view our "Apple iPhone" or "Samsung" devices?',
     	trigger: 'phones3'
     },
     {
     	id: 'phones3',
     	user: true,
-    	validator: value => {
-            if(!validTypes(value, phoneTypes)) {
-                return "Sorry that is not a valid input";
-            } 
-            return true; 
-        },
-    	trigger: 'poductDetails'
+    	validator: value => validTypes(value, phoneTypes) ? true : "Sorry that is not a valid input",
+    	trigger: ({value}) => value.toLowerCase() === 'back' ? 'back' : 'productDetails'
     }
 ]
 

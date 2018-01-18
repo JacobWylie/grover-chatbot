@@ -10,19 +10,14 @@ const computers = [
     },
     {
     	id: 'computers2',
-    	message: 'Do you prefer computers made by Apple, Microsoft, or Lenovo?',
+    	message: ({previousValue}) => previousValue,
     	trigger: 'computers3'
     },
     {
     	id: 'computers3',
     	user: true,
-    	validator: value => {
-    		if(!validTypes(value, computerTypes)) {
-            	return "Sorry that is not a valid input";
-            } 
-            return true; 
-    	},
-    	trigger: 'poductDetails'
+    	validator: value => !validTypes(value, computerTypes) ? "Sorry that is not a valid input" : true,
+    	trigger: 'productDetails'
     }
 ]
 

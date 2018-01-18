@@ -32,7 +32,7 @@ const initial = [
         ],
     },
     {
-        id: 'poductDetails',
+        id: 'productDetails',
         message: ({previousValue}) => productChoice(previousValue),
         trigger: 'summary'
     },

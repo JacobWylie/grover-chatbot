@@ -4,11 +4,11 @@ export default function productChoice(previousValue) {
 	let productArr = Object.keys(productDetails);
 	let list = [];
 	let string = ""
+	let value = previousValue.toLowerCase();
+	if (previousValue === 'back') {return 'back'}
 	productArr.forEach(product => {
 		let brand = productDetails[product].brand;
 		brand = brand.toLowerCase();
-		let value = previousValue.toLowerCase();
-		value = value.replace(/ +/g, "");
 		if( brand === value) {
 			list.push(productDetails[product].name)
 		}
