@@ -42,7 +42,6 @@ const helperFunctions = {
 								string += ` "${list[i]}" | `;
 							}
 							string += "  Please type which one you'd like to explore";
-							return string;
 						} else {
 							string = 'There was an error. Please type "back"';
 						}
@@ -50,7 +49,7 @@ const helperFunctions = {
 					},
 
 				  // checks to see if user is trying to view a valid product type. all other inputs return an error	
-	productTypes: function productTypes(value) {
+	'productTypes': function productTypes(value) {
 						value = helperFunctions.lowerCaseNoSpace(value);
 					    let productArr = Object.keys(productDetails);
 					    let truthy
