@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import findProduct from '../bot/findProduct';
+import helperFunctions from '../bot/functions';
 
 class ProductInfo extends Component {
 	render() {
 		// Returns the product selected by the user and strored in state
-		let details = findProduct(this.props.product);
+		let details = helperFunctions.findProduct(this.props.product);
 
 		return(
 			<tbody>

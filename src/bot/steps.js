@@ -1,18 +1,9 @@
 import React from 'react';
 import Product from '../components/Product';
-import phones from './phones';
-import drones from './drones';
-import gaming from './gaming';
-import computers from './computers';
-import wearables from './wearables';
-import home from './home';
-import productChoice from './productChoice';
-import inProductList from './inProductList';
-import brandsAvailable from './brandsAvailable';
-import populateCategories from './populateCategories';
+import helperFunctions from './functions';
 
-let categories = populateCategories();
-const initial = [
+let categories = helperFunctions.populateCategories();
+const steps = [
     {
         id: '1',
         message: 'Welcome to the ChatBot! We have a wide variety of products available to rent.',
@@ -29,18 +20,24 @@ const initial = [
     },
      {
         id: '4',
-        message: ({previousValue}) => brandsAvailable(previousValue),
-        trigger: 'phones3'
+        message: ({previousValue}) => helperFunctions.brandsAvailable(previousValue),
+        trigger: 'productTypes'
+    },
+    {
+        id: 'productTypes',
+        user: true,
+        validator: value => helperFunctions.productTypes(value) ? true : "Sorry that is not a valid input",
+        trigger: ({value}) => value.toLowerCase() === 'back' ? 'back' : 'productDetails'
     },
     {
         id: 'productDetails',
-        message: ({previousValue}) => productChoice(previousValue),
+        message: ({previousValue}) => helperFunctions.productChoice(previousValue),
         trigger: 'summary'
     },
     {
         id: 'summary',
         user: true,
-        validator: value => inProductList(value) ? true : "Sorry that is not a valid input",
+        validator: value => helperFunctions.inProductList(value) ? true : "Sorry that is not a valid input",
         trigger: ({value}) => value.toLowerCase() === 'back' ? 'back' : 'summary2'
     },
     {
@@ -61,8 +58,6 @@ const initial = [
         trigger: '3'
     },
 ]
-
-const steps = initial.concat(phones, drones, gaming, computers, wearables, home);
 
 export default steps;
 
