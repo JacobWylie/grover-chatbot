@@ -1,13 +1,16 @@
 import productDetails from '../bot/productDetails';
 
 export default function inProductList(value) {
-	let product = value.replace(/ +/g, "");
-    product = product.toLowerCase();
+	let newValue = value.toLowerCase().replace(/ +/g, "");
     let productArr = Object.keys(productDetails);
-    if(value.toLowerCase() === 'back') {
-        return true;
-    } else if (!productArr.includes(product)) {
-        return 'Sorry that is not a valid entry!';
-    }
-    return true;
+    let arr = [];
+ 	if (newValue === 'back') {return true};
+ 	productArr.forEach(category => {
+ 		productDetails[category].forEach(product => {
+ 			if(newValue === product.tag) {
+ 				arr.push(newValue);
+ 			}
+ 		})
+ 	})
+ 	return (arr.length > 0 ? true : false)
 }

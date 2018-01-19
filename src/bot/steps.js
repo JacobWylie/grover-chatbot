@@ -45,7 +45,7 @@ const initial = [
     {
         id: 'summary',
         user: true,
-        validator: value => inProductList(value),
+        validator: value => inProductList(value) ? true : "Sorry that is not a valid input",
         trigger: ({value}) => value.toLowerCase() === 'back' ? 'back' : 'summary2'
     },
     {
