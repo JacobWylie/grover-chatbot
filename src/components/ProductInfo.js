@@ -4,7 +4,7 @@ import findProduct from '../bot/findProduct';
 class ProductInfo extends Component {
 	render() {
 		// Returns the product selected by the user and strored in state
-		let details = findProduct(this.props.product)
+		let details = findProduct(this.props.product);
 
 		return(
 			<tbody>

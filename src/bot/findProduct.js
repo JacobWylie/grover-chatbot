@@ -7,9 +7,7 @@ export default function findProduct(value) {
 	let productArr = Object.keys(productDetails);
 	for (let i=0;i<productArr.length;i++) {
 		for (let x=0;x< productDetails[productArr[i]].length;x++) {
-			console.log(i)
 			if (productDetails[productArr[i]][x].tag === value) {
-				console.log(x)
 				return productDetails[productArr[i]][x];
 			}
 		}

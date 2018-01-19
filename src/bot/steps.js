@@ -9,7 +9,9 @@ import home from './home';
 import productChoice from './productChoice';
 import inProductList from './inProductList';
 import brandsAvailable from './brandsAvailable';
+import populateCategories from './populateCategories';
 
+let categories = populateCategories();
 const initial = [
     {
         id: '1',
@@ -23,14 +25,7 @@ const initial = [
     },
     {
         id: '3',
-        options: [
-            { value: 'Phones & Tablets', label: 'Phones & Tablets', trigger: '4' },
-            { value: 'Drones', label: 'Drones', trigger: '4' },
-            { value: 'Gaming & VR Devices', label: 'Gaming & VR Devices', trigger: '4' },
-            { value: 'Computers', label: 'Computers', trigger: '4' },
-            { value: 'Wearables', label: 'Wearables', trigger: '4' },
-            { value: 'Smart Home Appliances', label: 'Smart Home Appliances', trigger: '4' }
-        ],
+        options: categories
     },
      {
         id: '4',
