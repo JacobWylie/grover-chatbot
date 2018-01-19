@@ -3,7 +3,22 @@ import productDetails from '../bot/productDetails';
 
 class ProductInfo extends Component {
 	render() {
-		const details = productDetails[this.props.product];
+		let productId = this.props.product.toLowerCase().replace(/ +/g, "");
+		let details;
+		// searches through the product data and retrieves the product object
+		// that the user specified and assign that object to "details"
+		function findProduct(productId) {
+			let productArr = Object.keys(productDetails);
+			productArr.forEach(category => {
+				productDetails[category].forEach(product => {
+					if(product.tag === productId) {
+						details = product;
+					}
+				})
+			})
+		}
+		findProduct(productId);
+
 		return(
 			<tbody>
 			<tr>

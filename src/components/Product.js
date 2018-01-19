@@ -20,9 +20,6 @@ class Product extends Component {
     render() {
         const { summary } = this.state;
         let product = summary.value;
-        console.log(product)
-        product = product.toLowerCase().replace(/ +/g, "");
-        console.log(product)
         return (
             <div className="product-details">
                 <h3>Product Details</h3>
