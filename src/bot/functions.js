@@ -3,7 +3,7 @@ import productDetails from './productDetails';
 const helperFunctions = {
 
 						// populates the initial list of categories from the data set
-	populateCategories: function populateCategories() {
+	populateCategories: () => {
 							let arr = Object.keys(productDetails);
 							let catArr = [];
 							function Category(value, label, trigger) {
@@ -20,7 +20,7 @@ const helperFunctions = {
 						},
 
 					 // displays list of available brands from selected category
-	brandsAvailable: function brandsAvailable(value) {
+	brandsAvailable: value => {
 						let list = [];
 						let string = ""
 
