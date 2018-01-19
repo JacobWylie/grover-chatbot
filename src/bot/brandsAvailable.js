@@ -5,10 +5,11 @@ export default function brandsAvailable(value) {
 	let string = ""
 
 	// finds array of products that user selected
-	// fills array of unique brands for that type of product
+	// fills new array of unique brands for that type of product
+	// to display to user to choose from
 	productDetails2[value].forEach(product => {
-		if(!list.includes(product.brand)) {
-			list.push(product.brand)
+		if(!list.includes(product.display)) {
+			list.push(product.display)
 		}
 	})
 
@@ -16,7 +17,7 @@ export default function brandsAvailable(value) {
 	if (list.length === 0) {
 		string = `Sorry we don't have any products available in that category right now. Please type "back"`;
 	} else if (list.length > 1){
-		string = "We currently have these brands in stock: "
+		string = `We currently have these ${value} in stock: `
 		for(let i=0;i<list.length;i++) {
 			string += ` "${list[i]}" | `;
 		}

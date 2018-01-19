@@ -6,7 +6,7 @@ const validWords = ['apple', 'samsung', 'parrot', 'htc', 'oculus', 'microsoft', 
 					'alexa dot', 'alexa echo', 'qbo milk master', 'samsung powerbot'];
 
 export default function validator(value) {
-	value = value.toLowerCase()
+	value = value.toLowerCase();
 	if (!validWords.includes(value)) {
 		return 'Sorry that is not a valid entry!'
 	}

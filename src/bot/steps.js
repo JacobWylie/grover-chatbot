@@ -24,10 +24,10 @@ const initial = [
     {
         id: '3',
         options: [
-            { value: 'phones', label: 'Phones & Tablets', trigger: '4' },
+            { value: 'Phones & Tablets', label: 'Phones & Tablets', trigger: '4' },
             { value: 'drones', label: 'Drones', trigger: '4' },
             { value: 'gaming', label: 'Gaming & VR Devices', trigger: '4' },
-            { value: 'computers', label: 'Computers', trigger: '4' },
+            { value: 'Computers', label: 'Computers', trigger: '4' },
             { value: 'wearables', label: 'Wearables', trigger: '4' },
             { value: 'home', label: 'Smart Home Appliances', trigger: '4' }
         ],

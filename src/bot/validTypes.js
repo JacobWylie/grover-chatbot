@@ -1,5 +1,5 @@
 export default function validTypes(value, validWords) {
-	value = value.toLowerCase();
+	value = value.toLowerCase().replace(/ +/g, "");
     if(!validWords.includes(value)) {
         return false;
     }

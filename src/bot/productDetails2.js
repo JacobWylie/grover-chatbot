@@ -1,11 +1,13 @@
 const productDetails2 = {
-	phones:
+	'Phones & Tablets':
 		[
 			{
 				tag: 'iphone7128gb',
 				name: "iPhone 7 128GB",
 				specs: '2GB RAM, 128GB, 4.7", 12MP',
 				brand: "Apple",
+				class: 'appleiphone',
+				display: 'Apple Iphone',
 				type: 'phone',
 				price: "\u20AC44.99/month",
 				link: "https://getgrover.com/de-de/products/iphone-7-128-gb-2818",
@@ -16,6 +18,8 @@ const productDetails2 = {
 				name: "iPhone 7 32GB",
 				specs: '3GB RAM, 32GB, 5.5 ", 12MP',
 				brand: "Apple",
+				class: 'appleiphone',
+				display: 'Apple Iphone',
 				type: 'phone',
 				price: "\u20AC54.90/month",
 				link: "https://getgrover.com/de-de/products/iphone-7-plus-32gb-2865",
@@ -26,6 +30,8 @@ const productDetails2 = {
 				name: "iPhone 7 Plus",
 				specs: '3GB RAM, 128GB, 5.5 ", 12MP',
 				brand: "Apple",
+				class: 'appleiphone',
+				display: 'Apple Iphone',
 				type: 'phone',
 				price: "\u20AC79.90/month",
 				link: "https://getgrover.com/de-de/products/iphone-7-plus-128-gb-2821",
@@ -36,6 +42,8 @@ const productDetails2 = {
 				name: "Galaxy S8",
 				specs: '4GB RAM, 64GB, 5.8 ", 12MP',
 				brand: "Samsung",
+				class: 'samsunggalaxy',
+				display: 'Samsung Galaxy',
 				type: 'phone',
 				price: "\u20AC69.90/month",
 				link: "https://getgrover.com/de-de/products/samsung-galaxy-s8-64gb-5830",
@@ -46,13 +54,15 @@ const productDetails2 = {
 				name: "Galaxy S8 Plus",
 				specs: '4GB RAM, 64GB, 6.2 ", 12MP',
 				brand: "Samsung",
+				class: 'samsunggalaxy',
+				display: 'Samsung Galaxy',
 				type: 'phone',
 				price: "\u20AC79.90/month",
 				link: "https://getgrover.com/de-de/products/samsung-galaxy-s8-plus-64gb-5831",
 				img: "https://res-2.cloudinary.com/grover/image/upload/c_limit,h_1000,w_1000,q_auto,f_auto/r8b89pitr3qmdhqvv0yp.png"
 			},
 		],
-	computers: 
+	'Computers': 
 		[
 			{
 				name: 'Macbook 12',

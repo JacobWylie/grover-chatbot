@@ -1,6 +1,6 @@
 import validTypes from './validTypes';
 
-const phoneTypes = ['apple iphone', 'samsung', 'back'];
+const phoneTypes = ['appleiphone', 'samsunggalaxy', 'back'];
 
 const phones = [
     {
