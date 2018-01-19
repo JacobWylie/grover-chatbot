@@ -18,28 +18,23 @@ const initial = [
     },
     {
         id: '2',
-        message: "First choose a category to see what's available. You can type 'back' at anytime to start over.",
+        message: "First choose a category to see what's brands are available. You can type 'back' at anytime to start over.",
         trigger: '3',
     },
     {
         id: '3',
         options: [
-            { value: 'phone', label: 'Phones & Tablets', trigger: '4' },
-            { value: 'drones', label: 'Drones', trigger: drones[0].id },
-            { value: 'gaming', label: 'Gaming & VR Devices', trigger: gaming[0].id },
-            { value: 'computers', label: 'Computers', trigger: computers[0].id },
-            { value: 'wearables', label: 'Wearables', trigger: wearables[0].id },
-            { value: 'home', label: 'Smart Home Appliances', trigger: home[0].id }
+            { value: 'phones', label: 'Phones & Tablets', trigger: '4' },
+            { value: 'drones', label: 'Drones', trigger: '4' },
+            { value: 'gaming', label: 'Gaming & VR Devices', trigger: '4' },
+            { value: 'computers', label: 'Computers', trigger: '4' },
+            { value: 'wearables', label: 'Wearables', trigger: '4' },
+            { value: 'home', label: 'Smart Home Appliances', trigger: '4' }
         ],
     },
      {
         id: '4',
         message: ({previousValue}) => brandsAvailable(previousValue),
-        trigger: '5'
-    },
-    {
-        id: '5',
-        message: 'hi',
         trigger: 'phones3'
     },
     {

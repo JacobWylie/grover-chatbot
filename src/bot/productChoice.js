@@ -1,4 +1,4 @@
-import productDetails from './productDetails';
+import productDetails from './productDetails2';
 
 export default function productChoice(previousValue) {
 	let productArr = Object.keys(productDetails);
@@ -14,12 +14,10 @@ export default function productChoice(previousValue) {
 		}
 		return list;
 	})
-	if (list.length === 1) {
-		string = `We can show you the details for the "${list[0]}"`;
-	} else if (list.length === 0) {
+	if (list.length === 0) {
 		string = `Sorry we don't have any products available from that brand right now. Please type "back"`;
 	} else if (list.length > 1){
-		string = "We can show you product details for"
+		string = "We can show you product details for the following:"
 		for(let i=0;i<list.length;i++) {
 			string += ` "${list[i]}" |`;
 		}

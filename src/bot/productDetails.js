@@ -76,54 +76,6 @@ const productDetails = {
 		link: "https://getgrover.com/de-de/products/oculus-rift-vr-5221",
 		img: "https://res-4.cloudinary.com/grover/image/upload/c_limit,h_1000,w_1000,q_auto,f_auto/wehebtj6c2souql95lhs.png"
 	},
-	macbook12: {
-		name: 'Macbook 12',
-		specs: 'Intel Core M-5Y31, 8GB RAM, 256GB SSD, 12"',
-		brand: "Apple",
-		price: "\u20AC99.90/month",
-		link: "https://getgrover.com/de-de/products/macbook-12-core-m-5y31-8gb-ram-256gb-ssd-514",
-		img: "https://res-5.cloudinary.com/grover/image/upload/c_limit,h_1000,w_1000,q_auto,f_auto/pj3xwlbdexsno4gcviqd.png"
-	},
-	macbookair11: {
-		name: 'Macbook Air 11',
-		specs: 'Intel Core i7-2720QM, 8GB RAM, 512GB SSD, 11"',
-		brand: "Apple",
-		price: "\u20AC154.00/month",
-		link: "https://getgrover.com/de-de/products/macbook-air-116-22-ghz-i7-8gb-512gb-6081",
-		img: "https://res-2.cloudinary.com/grover/image/upload/c_limit,h_1000,w_1000,q_auto,f_auto/ck1dl6iseqhrphmla5sm.png"
-	},
-	macbookair13: {
-		name: 'Macbook Air 13',
-		specs: 'Intel Core i5-5250U, 4GB RAM, 128GB SSD, 13"',
-		brand: "Apple",
-		price: "\u20AC99.90/month",
-		link: "https://getgrover.com/de-de/products/macbook-air-13-3-core-i5-5250u-4gb-ram-516",
-		img: "https://res-3.cloudinary.com/grover/image/upload/c_limit,h_1000,w_1000,q_auto,f_auto/lkx7apkyojc7zxau6dyq.png"
-	},
-	macbookpro13: {
-		name: 'Macbook Pro 13',
-		specs: 'Intel Core i5-6360U, 8GB RAM, 256GB SSD, 13"',
-		brand: "Apple",
-		price: "\u20AC149.90/month",
-		link: "https://getgrover.com/de-de/products/macbook-pro-13-20-ghz-prozessor-256-gb-2884",
-		img: "https://res-5.cloudinary.com/grover/image/upload/c_limit,h_1000,w_1000,q_auto,f_auto/m27eklhg5kjhj3uxbicw.png"
-	},
-	surfacebook: {
-		name: 'Surface Book',
-		specs: 'Intel Core i7 dGPU, 16GB RAM, 512GB SSD, 13.5"',
-		brand: "Microsoft",
-		price: "\u20AC199.90/month",
-		link: "https://getgrover.com/de-de/products/microsoft-surface-book-512gb-intel-3323",
-		img: "https://res-1.cloudinary.com/grover/image/upload/c_limit,h_1000,w_1000,q_auto,f_auto/ovdp9yxui14kmqpvpmhs.png"
-	},
-	yoga300: {
-		name: 'YOGA 300-11IBR',
-		specs: 'Intel Core m3-6Y30, 4GB RAM, 256GB SSD, 11.6"',
-		brand: "Lenovo",
-		price: "\u20AC79.90/month",
-		link: "https://getgrover.com/de-de/products/lenovo-yoga-700-11isk-80qe0027ge-5149",
-		img: "https://res-4.cloudinary.com/grover/image/upload/c_limit,h_1000,w_1000,q_auto,f_auto/pb36vp1pgyghmozx3gre.png"
-	},
 	applewatch38mm: {
 		name: 'Apple Watch Series 1 38mm',
 		specs: 'Series 1, stainless steel case, 38mm sports strap black',
