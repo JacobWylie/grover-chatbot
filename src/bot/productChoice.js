@@ -1,13 +1,13 @@
-import productDetails2 from './productDetails2';
+import productDetails from './productDetails';
 
 export default function productChoice(previousValue) {
-	let productArr = Object.keys(productDetails2);
+	let productArr = Object.keys(productDetails);
 	let list = [];
 	let string = ""
 	let value = previousValue.toLowerCase().replace(/ +/g, "");
 	if (value === 'back') {return 'back'}
 	productArr.forEach(category => {
-		productDetails2[category].forEach(product => {
+		productDetails[category].forEach(product => {
 			if(value === product.class) {
 				list.push(product.name)
 			}

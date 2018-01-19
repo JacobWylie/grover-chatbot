@@ -25,11 +25,11 @@ const initial = [
         id: '3',
         options: [
             { value: 'Phones & Tablets', label: 'Phones & Tablets', trigger: '4' },
-            { value: 'drones', label: 'Drones', trigger: '4' },
-            { value: 'gaming', label: 'Gaming & VR Devices', trigger: '4' },
+            { value: 'Drones', label: 'Drones', trigger: '4' },
+            { value: 'Gaming & VR Devices', label: 'Gaming & VR Devices', trigger: '4' },
             { value: 'Computers', label: 'Computers', trigger: '4' },
-            { value: 'wearables', label: 'Wearables', trigger: '4' },
-            { value: 'home', label: 'Smart Home Appliances', trigger: '4' }
+            { value: 'Wearables', label: 'Wearables', trigger: '4' },
+            { value: 'Smart Home Appliances', label: 'Smart Home Appliances', trigger: '4' }
         ],
     },
      {
