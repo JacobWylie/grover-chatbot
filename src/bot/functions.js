@@ -2,6 +2,7 @@ import productDetails from './productDetails';
 
 const helperFunctions = {
 
+						// populates the initial list of categories from the data set
 	populateCategories: function populateCategories() {
 							let arr = Object.keys(productDetails);
 							let catArr = [];
@@ -18,6 +19,7 @@ const helperFunctions = {
 							return catArr
 						},
 
+					 // displays list of available brands from selected category
 	brandsAvailable: function brandsAvailable(value) {
 						let list = [];
 						let string = ""
@@ -30,7 +32,6 @@ const helperFunctions = {
 								list.push(product.display)
 							}
 						})
-
 						// compiles string from array to display as message on page
 						if (list.length === 0) {
 							string = `Sorry we don't have any products available in that category right now. Please type "back"`;
@@ -47,14 +48,13 @@ const helperFunctions = {
 						return string;	
 					},
 
-	productTypes: function validTypes(value, validWords) {
+				  // checks to see if user is trying to view a valid product type. all other inputs return an error	
+	productTypes: function productTypes(value) {
 						value = value.toLowerCase().replace(/ +/g, "");
-					    if(!validWords.includes(value)) {
-					        return false;
-					    }
-					    return true;
+					    return (value ? true : "Sorry that is not a valid input");
 					},
 
+				   // Returns a list of products based on the type selected. User can select from list to see details	
 	productChoice: function productChoice(previousValue) {
 						let productArr = Object.keys(productDetails);
 						let list = [];
@@ -62,7 +62,8 @@ const helperFunctions = {
 						let value = previousValue.toLowerCase().replace(/ +/g, "");
 						productArr.forEach(category => {
 							productDetails[category].forEach(product => {
-								if(value === product.class) {
+								let name = product.display.toLowerCase().replace(/ +/g, "");
+								if(value === name) {
 									list.push(product.name)
 								}
 							})
@@ -71,7 +72,7 @@ const helperFunctions = {
 
 						if (list.length === 0) {
 							string = `Sorry we don't have any products available from that brand right now. Please type "back"`;
-						} else if (list.length > 1){
+						} else if (list.length > 0){
 							string = "We can show you product details for the following:"
 							for(let i=0;i<list.length;i++) {
 								string += ` "${list[i]}" |`;
@@ -83,19 +84,10 @@ const helperFunctions = {
 						return string;	
 					},
 
+					// Checks to see if user is trying to see valid project. all other inputs return error
 	inProductList: function inProductList(value) {
 						let foundProduct = this.findProduct(value);
-						return (foundProduct ? true: false)
-					  	//   let arr = [];
-					 	// if (value.toLowerCase() === 'back') {return true};
-					 	// productArr.forEach(category => {
-					 	// 	productDetails[category].forEach(product => {
-					 	// 		if(newValue === product.tag) {
-					 	// 			arr.push(newValue);
-					 	// 		}
-					 	// 	})
-					 	// })
-					 	// return (arr.length > 0 ? true : false)
+						return (foundProduct || value ==='back' ? true: "Sorry that is not a valid input");
 					},
 
 					// Checks if the product the user selected exists. Disables user from selecting
@@ -105,19 +97,12 @@ const helperFunctions = {
 					let productArr = Object.keys(productDetails);
 					for (let i=0;i<productArr.length;i++) {
 						for (let x=0;x< productDetails[productArr[i]].length;x++) {
-							if (productDetails[productArr[i]][x].tag === value) {
+							let tag = productDetails[productArr[i]][x].name.toLowerCase().replace(/ +/g, "");
+							if (tag === value) {
 								return productDetails[productArr[i]][x];
 							}
 						}
 					}
-					// productArr.forEach(category => {
-					// 	productDetails[category].forEach(product => {
-					// 		if(product.tag === value) {
-					// 			console.log(product)
-					// 			return product;
-					// 		}
-					// 	})
-					// })
 				}
 }
 

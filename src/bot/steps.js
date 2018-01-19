@@ -26,7 +26,7 @@ const steps = [
     {
         id: 'productTypes',
         user: true,
-        validator: value => helperFunctions.productTypes(value) ? true : "Sorry that is not a valid input",
+        validator: value => helperFunctions.productTypes(value),
         trigger: ({value}) => value.toLowerCase() === 'back' ? 'back' : 'productDetails'
     },
     {
@@ -37,7 +37,7 @@ const steps = [
     {
         id: 'summary',
         user: true,
-        validator: value => helperFunctions.inProductList(value) ? true : "Sorry that is not a valid input",
+        validator: value => helperFunctions.inProductList(value),
         trigger: ({value}) => value.toLowerCase() === 'back' ? 'back' : 'summary2'
     },
     {
