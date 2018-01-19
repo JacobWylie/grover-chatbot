@@ -239,7 +239,8 @@ const productDetails = {
 			}
 		]
 }
-export default productDetails;
+module.exports = productDetails;
+// export default productDetails;
 
 
 

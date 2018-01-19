@@ -1,4 +1,5 @@
-import productDetails from './productDetails';
+// import productDetails from './productDetails';
+const productDetails = require('./productDetails');
 
 const helperFunctions = {
 
@@ -50,17 +51,17 @@ const helperFunctions = {
 
 				  // checks to see if user is trying to view a valid product type. all other inputs return an error	
 	productTypes: function productTypes(value) {
-						value = this.lowerCaseNoSpace(value);
+						value = helperFunctions.lowerCaseNoSpace(value);
 					    let productArr = Object.keys(productDetails);
 					    let truthy
 					    for (let i=0;i<productArr.length;i++) {
 							for (let x=0;x< productDetails[productArr[i]].length;x++) {
 								let tag = productDetails[productArr[i]][x].display;
-								tag = this.lowerCaseNoSpace(tag);
+								tag = helperFunctions.lowerCaseNoSpace(tag);
 								if(tag === value) {truthy = true};
 							}
 						}
-						return (truthy ? true : "Sorry that is not a valid input")
+						return (truthy || value === 'back' ? true : "Sorry that is not a valid input")
 					},
 
 				   // Returns a list of products based on the type selected. User can select from list to see details	
@@ -121,7 +122,8 @@ const helperFunctions = {
 	// value => value.toLowerCase().replace(/ +/g, "")
 }
 
-export default helperFunctions;
+module.exports = helperFunctions
+// export default helperFunctions;
 
 
 
