@@ -16,7 +16,7 @@ const productDetails = {
 			{
 				tag: "iphone732gb",
 				name: "iPhone 7 32GB",
-				specs: '3GB RAM, 32GB, 5.5 ", 12MP',
+				specs: '3GB RAM, 32GB, 5.5", 12MP',
 				brand: "Apple",
 				class: 'appleiphone',
 				display: 'Apple Iphone',
@@ -28,7 +28,7 @@ const productDetails = {
 			{
 				tag: 'iphone7plus',
 				name: "iPhone 7 Plus",
-				specs: '3GB RAM, 128GB, 5.5 ", 12MP',
+				specs: '3GB RAM, 128GB, 5.5", 12MP',
 				brand: "Apple",
 				class: 'appleiphone',
 				display: 'Apple Iphone',
@@ -40,7 +40,7 @@ const productDetails = {
 			{
 				tag: 'galaxys8',
 				name: "Galaxy S8",
-				specs: '4GB RAM, 64GB, 5.8 ", 12MP',
+				specs: '4GB RAM, 64GB, 5.8", 12MP',
 				brand: "Samsung",
 				class: 'samsunggalaxy',
 				display: 'Samsung Galaxy',
@@ -52,7 +52,7 @@ const productDetails = {
 			{
 				tag: 'galaxys8plus',
 				name: "Galaxy S8 Plus",
-				specs: '4GB RAM, 64GB, 6.2 ", 12MP',
+				specs: '4GB RAM, 64GB, 6.2", 12MP',
 				brand: "Samsung",
 				class: 'samsunggalaxy',
 				display: 'Samsung Galaxy',

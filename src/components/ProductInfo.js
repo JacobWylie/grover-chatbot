@@ -1,23 +1,10 @@
 import React, { Component } from 'react';
-import productDetails from '../bot/productDetails';
+import findProduct from '../bot/findProduct';
 
 class ProductInfo extends Component {
 	render() {
-		let productId = this.props.product.toLowerCase().replace(/ +/g, "");
-		let details;
-		// searches through the product data and retrieves the product object
-		// that the user specified and assign that object to "details"
-		function findProduct(productId) {
-			let productArr = Object.keys(productDetails);
-			productArr.forEach(category => {
-				productDetails[category].forEach(product => {
-					if(product.tag === productId) {
-						details = product;
-					}
-				})
-			})
-		}
-		findProduct(productId);
+		// Returns the product selected by the user and strored in state
+		let details = findProduct(this.props.product)
 
 		return(
 			<tbody>
