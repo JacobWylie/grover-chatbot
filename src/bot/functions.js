@@ -52,15 +52,15 @@ const helperFunctions = {
 	productTypes: function productTypes(value) {
 						value = this.lowerCaseNoSpace(value);
 					    let productArr = Object.keys(productDetails);
+					    let truthy
 					    for (let i=0;i<productArr.length;i++) {
 							for (let x=0;x< productDetails[productArr[i]].length;x++) {
 								let tag = productDetails[productArr[i]][x].display;
 								tag = this.lowerCaseNoSpace(tag);
-								if (tag === value) {
-									return (value ? true : "Sorry that is not a valid input");
-								}
+								if(tag === value) {truthy = true};
 							}
 						}
+						return (truthy ? true : "Sorry that is not a valid input")
 					},
 
 				   // Returns a list of products based on the type selected. User can select from list to see details	
