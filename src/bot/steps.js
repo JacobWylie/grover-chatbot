@@ -3,26 +3,15 @@ import Product from '../components/Product';
 import helperFunctions from './functions';
 import axios from "axios";
 
-function getData(value) {
-        axios.get('http://localhost:8085/chatbot', {
-            params: {
-              value: value,
-              func: 'productTypes'
-            }
-          })
-          .then(function (response) {
-            return response.data;
-          })
-          .catch(function (error) {
-            console.log(error);
-          })
-      }
+
+function getData(value, id) {
+    return axios.get('http://localhost:8085/chatbot', {params: { value: value, func: "productTypes" }})
+}
 
 // HOW DO YOU RETURN A VALUE FROM AXIOS REQUEST/PROMISE
 // CHANGE ARROW FUNCTIONS TO FUNCTION EXPRESSIONS SO THIS.ID CAN BE USED IN AXIOS FUNC:
 // FIGURE OUT WHY THIS.LOWERCASENOSPACE DOESN'T WORK IN NODE APP
 
-let categories = helperFunctions.populateCategories();
 
 const steps = [
     {
@@ -37,7 +26,7 @@ const steps = [
     },
     {
         id: '3',
-        options: categories
+        options: helperFunctions.populateCategories(),
     },
      {
         id: '4',
@@ -47,12 +36,19 @@ const steps = [
     {
         id: 'productTypes',
         user: true,
-        // validator: value => helperFunctions.productTypes(value),
         validator: function(value) {
-            console.log(this.id)
-            let data = getData(value);
-            console.log(data)
-            return data;
+            let x = this;
+            let y;
+            async function foo() {
+                y = await getData(value, x.id)
+                console.log(y.data)
+                y = y.data
+                return y
+            }
+            foo().then(res=> {
+                y = res;
+                return y
+            })
         },
         trigger: ({value}) => value.toLowerCase() === 'back' ? 'back' : 'productDetails'
     },

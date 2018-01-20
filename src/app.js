@@ -1,10 +1,10 @@
-const express    = require('express'),
-	  app 	     = express(),
-	  bodyParser = require('body-parser'),
-	  server     = require('http').Server(app),
-	  productDetails = require('./bot/productDetails'),
-	 helperFunctions = require('./bot/functions'),
-	 cors             = require('cors');
+const express    	   = require('express'),
+	  app 	     	   = express(),
+	  bodyParser 	   = require('body-parser'),
+	  server     	   = require('http').Server(app),
+	  productDetails   = require('./bot/productDetails'),
+	  helperFunctions  = require('./bot/functions'),
+	  cors             = require('cors');
 	 
 
 // Parse data through body/form
@@ -14,7 +14,6 @@ app.use(cors());
 
 
 app.get('/chatbot', function (req, res) {
-
 	let func = helperFunctions[req.query.func];
 	let val = req.query.value;
 	res.send(func(val));

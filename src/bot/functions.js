@@ -81,7 +81,7 @@ const helperFunctions = {
 						})
 
 						if (list.length === 0) {
-							string = `Sorry we don't have any products available from that brand right now. Please type "back"`;
+							string = `Sorry we don't have any products available from ${previousValue} right now. Please type "back"`;
 						} else if (list.length > 0){
 							string = "We can show you product details for the following:";
 							for(let i=0;i<list.length;i++) {
