@@ -95,8 +95,8 @@ const helperFunctions = {
 					},
 
 					// Checks to see if user is trying to see valid project. all other inputs return error
-	inProductList: function inProductList(value) {
-						let foundProduct = this.findProduct(value);
+	'inProductList': function inProductList(value) {
+						let foundProduct = helperFunctions.findProduct(value);
 						return (foundProduct || value ==='back' ? true: "Sorry that is not a valid input");
 					},
 

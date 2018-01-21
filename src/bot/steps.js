@@ -1,18 +1,9 @@
 import React from 'react';
 import Product from '../components/Product';
 import helperFunctions from './functions';
-import axios from "axios";
+import axios from "axios"
 
-
-function getData(value, id) {
-    return axios.get('http://localhost:8085/chatbot', {params: { value: value, func: "productTypes" }})
-}
-
-// HOW DO YOU RETURN A VALUE FROM AXIOS REQUEST/PROMISE
-// CHANGE ARROW FUNCTIONS TO FUNCTION EXPRESSIONS SO THIS.ID CAN BE USED IN AXIOS FUNC:
-// FIGURE OUT WHY THIS.LOWERCASENOSPACE DOESN'T WORK IN NODE APP
-
-
+let p
 const steps = [
     {
         id: '1',
@@ -26,7 +17,7 @@ const steps = [
     },
     {
         id: '3',
-        options: helperFunctions.populateCategories(),
+        options: helperFunctions.populateCategories()
     },
      {
         id: '4',
@@ -37,30 +28,25 @@ const steps = [
         id: 'productTypes',
         user: true,
         validator: function(value) {
-            let x = this;
-            let y;
-            async function foo() {
-                y = await getData(value, x.id)
-                console.log(y.data)
-                y = y.data
-                return y
-            }
-            foo().then(res=> {
-                y = res;
-                return y
-            })
+            getData(value, this.id).then(x => p = x.data);
+            return p;
         },
         trigger: ({value}) => value.toLowerCase() === 'back' ? 'back' : 'productDetails'
     },
     {
         id: 'productDetails',
         message: ({previousValue}) => helperFunctions.productChoice(previousValue),
-        trigger: 'summary'
+        trigger: 'inProductList'
     },
     {
-        id: 'summary',
+        id: 'inProductList',
         user: true,
-        validator: value => helperFunctions.inProductList(value),
+        validator: function(value) {
+            p = "nope"
+            getData(value, this.id).then(x => p = x.data);
+            console.log(p)
+            return p;
+        },
         trigger: ({value}) => value.toLowerCase() === 'back' ? 'back' : 'summary2'
     },
     {
@@ -81,6 +67,19 @@ const steps = [
         trigger: '3'
     },
 ]
+
+function foo(value, id, callback) {
+    getData(value, id).then(x=>p=x.data).then(x=>callback(x))
+}
+
+function getData(value, id) {
+    return axios.get('http://localhost:8085/chatbot', {params: { value: value, func: id }})
+}
+
+// async function response(value, id) {
+//     let data = await getData(value, id);
+//     return data.data
+// }
 
 export default steps;
 

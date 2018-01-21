@@ -7,19 +7,19 @@ class Product extends Component {
         super(props);
 
         this.state = {
-            summary: '',
+            inProductList: '',
         };
     }
 
     componentWillMount() {
         const { steps } = this.props;
-        const { summary } = steps;
-        this.setState({ summary });
+        const { inProductList } = steps;
+        this.setState({ inProductList });
     }
 
     render() {
-        const { summary } = this.state;
-        let product = summary.value;
+        const { inProductList } = this.state;
+        let product = inProductList.value;
         return (
             <div className="product-details">
                 <h3>Product Details</h3>
