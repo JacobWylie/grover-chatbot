@@ -20,32 +20,25 @@ const helperFunctions = {
 						},
 	
 					 // displays list of available brands from selected category
-	brandsAvailable: value => {
+	brandsAvailable: function(value) {
 						let list = [];
-						let string = ""
 						for (let i=0; i<productDetails.length;i++) {
 							if (productDetails[i].type === value && !list.includes(productDetails[i].display)) {
 								list.push(productDetails[i].display)
 							}
 
 						}
+
 						// compiles string from array to display as message on page
-						if (list.length === 0) {
-							string = `Sorry we don't have any products available in that category right now. Please type "back"`;
-						} else if (list.length > 0){
-							string = `We currently have these ${value} in stock: `;
-							for(let i=0;i<list.length;i++) {
-								string += ` "${list[i]}" | `;
-							}
-							string += "  Please type which one you'd like to explore";
-						} else {
-							string = 'There was an error. Please type "back"';
-						}
-						return string;	
+						let noProduct = `Sorry we don't have any ${value} available right now. Please type "back"`;
+						let product = `We currently have these ${value} in stock: `;
+						let string = this.concactString(list, noProduct, product);
+						string += "  Please type which one you'd like to explore";
+						return string
 					},
 
 				  // checks to see if user is trying to view a valid product type. all other inputs return an error	
-	productTypes: function productTypes(value) {
+	productTypes: function(value) {
 						value = this.lowerCaseNoSpace(value);
 					    let truthy
 					    for (let i=1;i<productDetails.length;i++) {
@@ -57,11 +50,10 @@ const helperFunctions = {
 					},
 
 				   // Returns a list of products based on the type selected. User can select from list to see details	
-	productChoice: function productChoice(previousValue) {
+	productChoice: function(previousValue) {
 						let productArr = Object.keys(productDetails);
 						let list = [];
-						let string = "";
-						let value = this.a.lowerCaseNoSpace(previousValue);
+						let value = this.lowerCaseNoSpace(previousValue);
 						productArr.forEach(category => {
 							productDetails[category].forEach(product => {
 								let name = product.display;
@@ -73,41 +65,48 @@ const helperFunctions = {
 							return list;
 						})
 
-						if (list.length === 0) {
-							string = `Sorry we don't have any products available from ${previousValue} right now. Please type "back"`;
-						} else if (list.length > 0){
-							string = "We can show you product details for the following:";
-							for(let i=0;i<list.length;i++) {
-								string += ` "${list[i]}" |`;
-							}
-							return string;
-						} else {
-							string = "There was an error";
-						}
-						return string;	
+						// compiles string from array to display as message on page
+						let noProduct = `Sorry we don't have any products available from ${previousValue} right now. Please type "back"`;
+						let product = "We can show you product details for the following:";
+						let string = this.concactString(list, noProduct, product);
+						return string;
 					},
 
 					// Checks to see if user is trying to see valid project. all other inputs return error
-	inProductList: function inProductList(value) {
-						let foundProduct = this.a.findProduct(value);
+	inProductList: function(value) {
+						let foundProduct = this.findProduct(value);
 						return (foundProduct || value ==='back' ? true: "Sorry that is not a valid input");
 					},
 
 					// Checks if the product the user selected exists. Disables user from selecting
 					// anything that is not a product
-	findProduct: function findProduct(value) {
-					value = this.a.lowerCaseNoSpace(value);
+	findProduct: function(value) {
+					value = this.lowerCaseNoSpace(value);
 					let productArr = Object.keys(productDetails);
 					for (let i=0;i<productArr.length;i++) {
 						for (let x=0;x< productDetails[productArr[i]].length;x++) {
 							let tag = productDetails[productArr[i]][x].name;
-							tag = this.a.lowerCaseNoSpace(tag);
+							tag = this.lowerCaseNoSpace(tag);
 							if (tag === value) {
 								return productDetails[productArr[i]][x];
 							}
 						}
 					}
 				},
+
+	concactString: function(array, noProduct, product) {
+						if (array.length === 0) {
+							return noProduct;
+						} else if (array.length > 0){
+							for(let i=0;i<array.length;i++) {
+								product += ` "${array[i]}" |`;
+							}
+							return product;
+						} else {
+							return 'There was an error. Please type "back"'
+						}
+
+	},
 
 	lowerCaseNoSpace: value => value.toLowerCase().replace(/ +/g, "")
 
