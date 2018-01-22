@@ -1,59 +1,34 @@
-// import productDetails from './productDetails';
-const productDetails = require('./productDetails');
+import productDetails from './productDetails';
 
 const helperFunctions = {
 
 						// populates the initial list of categories from the data set
 	populateCategories: () => {
-							let arr = Object.keys(productDetails);
-							let catArr = [];
-							function Category(value, label, trigger, img) {
-								this.value = value;
+							const catArr = []
+							const catNames = [...new Set(productDetails.map(product => product.type))];
+							catNames.shift()
+							function Category(label, value, trigger) {
 								this.label = label;
+								this.value = value;
 								this.trigger = trigger;
-								this.img = img;
 							}
-							arr.forEach(cat => {
-								let img = productDetails[cat][0].img;
-								let newCat = new Category(cat, cat, 4, img);
-								catArr.push(newCat);
-							})
+							for (let i=0; i<catNames.length; i++) {
+								let newCat = new Category(catNames[i], catNames[i], 'brandsAvailable')
+								catArr.push(newCat)
+							}
 							return catArr;
 						},
 	
-					// Check to see if user entered a valid category
-	validateCategories: value => {
-							value = helperFunctions.lowerCaseNoSpace(value);
-							let arr = Object.keys(productDetails);
-							let truthy
-							for(let i=0;i<arr.length;i++) {
-								let cat = helperFunctions.lowerCaseNoSpace(arr[i])
-								if(value === cat){truthy = true}
-							} 
-							return (truthy ? true : "Let's choose a valid category!")
-	},
-
 					 // displays list of available brands from selected category
-	'brandsAvailable': value => {
-						value = helperFunctions.lowerCaseNoSpace(value);
+	brandsAvailable: value => {
 						let list = [];
 						let string = ""
-						let brands;
-						let arr = Object.keys(productDetails);
-						for (let i=0; i<arr.length;i++) {
-							if (helperFunctions.lowerCaseNoSpace(arr[i]).includes(value)) {
-								brands = arr[i];
+						for (let i=0; i<productDetails.length;i++) {
+							if (productDetails[i].type === value && !list.includes(productDetails[i].display)) {
+								list.push(productDetails[i].display)
 							}
-						}
-						// finds array of products that user selected
-						// fills new array of unique brands for that type of product
-						// to display to user to choose from
 
-						productDetails[brands].forEach(product => {
-							if(!list.includes(product.display)) {
-								list.push(product.display);
-							}
-						})
+						}
 						// compiles string from array to display as message on page
 						if (list.length === 0) {
 							string = `Sorry we don't have any products available in that category right now. Please type "back"`;
@@ -70,16 +45,13 @@ const helperFunctions = {
 					},
 
 				  // checks to see if user is trying to view a valid product type. all other inputs return an error	
-	'productTypes': function productTypes(value) {
-						value = helperFunctions.lowerCaseNoSpace(value);
-					    let productArr = Object.keys(productDetails);
+	productTypes: function productTypes(value) {
+						value = this.lowerCaseNoSpace(value);
 					    let truthy
-					    for (let i=0;i<productArr.length;i++) {
-							for (let x=0;x< productDetails[productArr[i]].length;x++) {
-								let tag = productDetails[productArr[i]][x].display;
-								tag = helperFunctions.lowerCaseNoSpace(tag);
-								if(tag === value) {truthy = true};
-							}
+					    for (let i=1;i<productDetails.length;i++) {
+					    	let product = this.lowerCaseNoSpace(productDetails[i].display)
+					    	if(product === value)
+					    		truthy = true
 						}
 						return (truthy || value === 'back' ? true : "Sorry that is not a valid input")
 					},
@@ -89,7 +61,7 @@ const helperFunctions = {
 						let productArr = Object.keys(productDetails);
 						let list = [];
 						let string = "";
-						let value = this.lowerCaseNoSpace(previousValue);
+						let value = this.a.lowerCaseNoSpace(previousValue);
 						productArr.forEach(category => {
 							productDetails[category].forEach(product => {
 								let name = product.display;
@@ -116,20 +88,20 @@ const helperFunctions = {
 					},
 
 					// Checks to see if user is trying to see valid project. all other inputs return error
-	'inProductList': function inProductList(value) {
-						let foundProduct = helperFunctions.findProduct(value);
+	inProductList: function inProductList(value) {
+						let foundProduct = this.a.findProduct(value);
 						return (foundProduct || value ==='back' ? true: "Sorry that is not a valid input");
 					},
 
 					// Checks if the product the user selected exists. Disables user from selecting
 					// anything that is not a product
 	findProduct: function findProduct(value) {
-					value = this.lowerCaseNoSpace(value);
+					value = this.a.lowerCaseNoSpace(value);
 					let productArr = Object.keys(productDetails);
 					for (let i=0;i<productArr.length;i++) {
 						for (let x=0;x< productDetails[productArr[i]].length;x++) {
 							let tag = productDetails[productArr[i]][x].name;
-							tag = this.lowerCaseNoSpace(tag);
+							tag = this.a.lowerCaseNoSpace(tag);
 							if (tag === value) {
 								return productDetails[productArr[i]][x];
 							}
@@ -139,11 +111,9 @@ const helperFunctions = {
 
 	lowerCaseNoSpace: value => value.toLowerCase().replace(/ +/g, "")
 
-	// value => value.toLowerCase().replace(/ +/g, "")
 }
 
-module.exports = helperFunctions
-// export default helperFunctions;
+export default helperFunctions;
 
 
 

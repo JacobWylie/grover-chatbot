@@ -1,11 +1,6 @@
 import React from 'react';
 import Product from '../components/Product';
-import Categories from '../components/Categories';
-import Brands from '../components/Brands';
 import helperFunctions from './functions';
-
-
-let p
 
 const steps = [
     {
@@ -20,26 +15,17 @@ const steps = [
     },
     {
         id: "categories",
-        component: <Categories />,
-        waitAction: true,
-        trigger: 'selectCategory'
+        options: helperFunctions.populateCategories()
     },
     {
-        id:'selectCategory',
-        user: true,
-        validator: value => helperFunctions.validateCategories(value),
-        trigger: ({value}) => value.toLowerCase() === 'back' ? 'back' : '4',
-    },
-    {
-        id: 'brands',
-        component: <Brands />,
-        waitAction: true,
+        id: 'brandsAvailable',
+        message: ({previousValue}) => helperFunctions.brandsAvailable(previousValue),
         trigger: 'productTypes'
     },
     {
         id: 'productTypes',
         user: true,
-        validator: value => true,
+        validator: value => helperFunctions.productTypes(value),
         trigger: ({value}) => value.toLowerCase() === 'back' ? 'back' : 'productDetails'
     },
     {
@@ -71,25 +57,6 @@ const steps = [
         trigger: 'categories'
     },
 ]
-
-// function bar(value, callback) {
-//     getData(value, 'productTypes').then(x => callback(x))
-// }
-
-// function callback(x) {
-//     return x
-// }
-
-// function foo(value, id, callback) {
-//     getData(value, id).then(x=>p=x.data).then(x=>callback(x))
-// }
-
-
-
-// async function response(value, id) {
-//     let data = await getData(value, id);
-//     return data.data
-// }
 
 export default steps;
 
