@@ -41,7 +41,7 @@ const helperFunctions = {
 	productTypes: function(value) {
 						value = this.lowerCaseNoSpace(value);
 					    let truthy
-					    for (let i=1;i<productDetails.length;i++) {
+					    for (let i=0;i<productDetails.length;i++) {
 					    	let product = this.lowerCaseNoSpace(productDetails[i].display)
 					    	if(product === value)
 					    		truthy = true
@@ -51,20 +51,14 @@ const helperFunctions = {
 
 				   // Returns a list of products based on the type selected. User can select from list to see details	
 	productChoice: function(previousValue) {
-						let productArr = Object.keys(productDetails);
 						let list = [];
 						let value = this.lowerCaseNoSpace(previousValue);
-						productArr.forEach(category => {
-							productDetails[category].forEach(product => {
-								let name = product.display;
-								name = this.lowerCaseNoSpace(name);
+						for(let i=0; i<productDetails.length; i++) {
+							let name = this.lowerCaseNoSpace(productDetails[i].display);
 								if(value === name) {
-									list.push(product.name);
+									list.push(productDetails[i].name);
 								}
-							})
-							return list;
-						})
-
+						}
 						// compiles string from array to display as message on page
 						let noProduct = `Sorry we don't have any products available from ${previousValue} right now. Please type "back"`;
 						let product = "We can show you product details for the following:";
@@ -82,16 +76,13 @@ const helperFunctions = {
 					// anything that is not a product
 	findProduct: function(value) {
 					value = this.lowerCaseNoSpace(value);
-					let productArr = Object.keys(productDetails);
-					for (let i=0;i<productArr.length;i++) {
-						for (let x=0;x< productDetails[productArr[i]].length;x++) {
-							let tag = productDetails[productArr[i]][x].name;
-							tag = this.lowerCaseNoSpace(tag);
-							if (tag === value) {
-								return productDetails[productArr[i]][x];
-							}
+					for (let i=0;i<productDetails.length;i++) {
+						let tag = this.lowerCaseNoSpace(productDetails[i].name);
+						if (tag === value) {
+							return productDetails[i];
 						}
 					}
+					return false
 				},
 
 	concactString: function(array, noProduct, product) {

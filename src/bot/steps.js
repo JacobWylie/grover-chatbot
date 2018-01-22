@@ -36,11 +36,11 @@ const steps = [
     {
         id: 'inProductList',
         user: true,
-        validator: value => true,
-        trigger: ({value}) => value.toLowerCase() === 'back' ? 'back' : 'summary2'
+        validator: value => helperFunctions.inProductList(value),
+        trigger: ({value}) => value.toLowerCase() === 'back' ? 'back' : 'summary'
     },
     {
-        id: 'summary2',
+        id: 'summary',
         component: <Product />,
         asMessage: true,
         trigger: 'end'

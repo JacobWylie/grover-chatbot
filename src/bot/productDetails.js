@@ -1,14 +1,6 @@
 const productDetails =
 	[	
 		{
-			'Phones & Tablets': "https://res-5.cloudinary.com/grover/image/upload/c_limit,h_1000,w_1000,q_auto,f_auto/glyj6cga4f2nsh2nwohk.png",
-			'Computers': "https://res-5.cloudinary.com/grover/image/upload/c_limit,h_1000,w_1000,q_auto,f_auto/glyj6cga4f2nsh2nwohk.png",
-			'Drones': "https://res-5.cloudinary.com/grover/image/upload/c_limit,h_1000,w_1000,q_auto,f_auto/glyj6cga4f2nsh2nwohk.png",
-			'Gaming & VR Devices': "https://res-5.cloudinary.com/grover/image/upload/c_limit,h_1000,w_1000,q_auto,f_auto/glyj6cga4f2nsh2nwohk.png",
-			'Wearables': "https://res-5.cloudinary.com/grover/image/upload/c_limit,h_1000,w_1000,q_auto,f_auto/glyj6cga4f2nsh2nwohk.png",
-			'Smart Home Appliances': "https://res-5.cloudinary.com/grover/image/upload/c_limit,h_1000,w_1000,q_auto,f_auto/glyj6cga4f2nsh2nwohk.png", 
-		},
-		{
 			name: "iPhone 7 128GB",
 			specs: '2GB RAM, 128GB, 4.7", 12MP',
 			brand: "Apple",
