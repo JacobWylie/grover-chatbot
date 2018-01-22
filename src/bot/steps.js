@@ -1,9 +1,12 @@
 import React from 'react';
 import Product from '../components/Product';
+import Categories from '../components/Categories';
+import Brands from '../components/Brands';
 import helperFunctions from './functions';
-import axios from "axios"
+
 
 let p
+
 const steps = [
     {
         id: '1',
@@ -13,24 +16,30 @@ const steps = [
     {
         id: '2',
         message: "First choose a category to see what's brands are available. You can type 'back' at anytime to start over.",
-        trigger: '3',
+        trigger: 'categories',
     },
     {
-        id: '3',
-        options: helperFunctions.populateCategories()
+        id: "categories",
+        component: <Categories />,
+        waitAction: true,
+        trigger: 'selectCategory'
     },
-     {
-        id: '4',
-        message: ({previousValue}) => helperFunctions.brandsAvailable(previousValue),
+    {
+        id:'selectCategory',
+        user: true,
+        validator: value => helperFunctions.validateCategories(value),
+        trigger: ({value}) => value.toLowerCase() === 'back' ? 'back' : '4',
+    },
+    {
+        id: 'brands',
+        component: <Brands />,
+        waitAction: true,
         trigger: 'productTypes'
     },
     {
         id: 'productTypes',
         user: true,
-        validator: function(value) {
-            getData(value, this.id).then(x => p = x.data);
-            return p;
-        },
+        validator: value => true,
         trigger: ({value}) => value.toLowerCase() === 'back' ? 'back' : 'productDetails'
     },
     {
@@ -41,12 +50,7 @@ const steps = [
     {
         id: 'inProductList',
         user: true,
-        validator: function(value) {
-            p = "nope"
-            getData(value, this.id).then(x => p = x.data);
-            console.log(p)
-            return p;
-        },
+        validator: value => true,
         trigger: ({value}) => value.toLowerCase() === 'back' ? 'back' : 'summary2'
     },
     {
@@ -58,23 +62,29 @@ const steps = [
     {
         id: 'end',
         options: [
-            { value: 'Start Over', label: 'Start Over', trigger: '3' }
+            { value: 'Start Over', label: 'Start Over', trigger: 'categories' }
         ]
     },
     {
         id: 'back',
         message: 'Going Back......',
-        trigger: '3'
+        trigger: 'categories'
     },
 ]
 
-function foo(value, id, callback) {
-    getData(value, id).then(x=>p=x.data).then(x=>callback(x))
-}
+// function bar(value, callback) {
+//     getData(value, 'productTypes').then(x => callback(x))
+// }
 
-function getData(value, id) {
-    return axios.get('http://localhost:8085/chatbot', {params: { value: value, func: id }})
-}
+// function callback(x) {
+//     return x
+// }
+
+// function foo(value, id, callback) {
+//     getData(value, id).then(x=>p=x.data).then(x=>callback(x))
+// }
+
+
 
 // async function response(value, id) {
 //     let data = await getData(value, id);

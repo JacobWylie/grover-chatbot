@@ -1,6 +1,7 @@
 const productDetails = {
 	'Phones & Tablets':
 		[
+			{img: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/list-image/phones/nova-plus/nova-plus-listimage-black.png'},
 			{
 				name: "iPhone 7 128GB",
 				specs: '2GB RAM, 128GB, 4.7", 12MP',

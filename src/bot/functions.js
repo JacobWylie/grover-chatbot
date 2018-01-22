@@ -7,28 +7,49 @@ const helperFunctions = {
 	populateCategories: () => {
 							let arr = Object.keys(productDetails);
 							let catArr = [];
-							function Category(value, label, trigger) {
+							function Category(value, label, trigger, img) {
 								this.value = value;
 								this.label = label;
 								this.trigger = trigger;
+								this.img = img;
 							}
-
 							arr.forEach(cat => {
-								let newCat = new Category(cat, cat, 4);
+								let img = productDetails[cat][0].img;
+								let newCat = new Category(cat, cat, 4, img);
 								catArr.push(newCat);
 							})
 							return catArr;
 						},
+	
+					// Check to see if user entered a valid category
+	validateCategories: value => {
+							value = helperFunctions.lowerCaseNoSpace(value);
+							let arr = Object.keys(productDetails);
+							let truthy
+							for(let i=0;i<arr.length;i++) {
+								let cat = helperFunctions.lowerCaseNoSpace(arr[i])
+								if(value === cat){truthy = true}
+							} 
+							return (truthy ? true : "Let's choose a valid category!")
+	},
 
 					 // displays list of available brands from selected category
-	brandsAvailable: value => {
+	'brandsAvailable': value => {
+						value = helperFunctions.lowerCaseNoSpace(value);
 						let list = [];
 						let string = ""
-
+						let brands;
+						let arr = Object.keys(productDetails);
+						for (let i=0; i<arr.length;i++) {
+							if (helperFunctions.lowerCaseNoSpace(arr[i]).includes(value)) {
+								brands = arr[i];
+							}
+						}
 						// finds array of products that user selected
 						// fills new array of unique brands for that type of product
 						// to display to user to choose from
-						productDetails[value].forEach(product => {
+
+						productDetails[brands].forEach(product => {
 							if(!list.includes(product.display)) {
 								list.push(product.display);
 							}
