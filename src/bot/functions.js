@@ -45,6 +45,7 @@ const helperFunctions = {
 					    	let product = this.lowerCaseNoSpace(productDetails[i].display)
 					    	if(product === value)
 					    		truthy = true
+					    		return truthy;
 						}
 						return (truthy || value === 'back' ? true : "Sorry that is not a valid input")
 					},
