@@ -43,9 +43,9 @@ const helperFunctions = {
 					    let truthy
 					    for (let i=0;i<productDetails.length;i++) {
 					    	let product = this.lowerCaseNoSpace(productDetails[i].display)
+					    	console.log(product)
 					    	if(product === value)
-					    		truthy = true
-					    		return truthy;
+					    		return truthy = true
 						}
 						return (truthy || value === 'back' ? true : "Sorry that is not a valid input")
 					},
