@@ -43,7 +43,6 @@ const helperFunctions = {
 					    let truthy
 					    for (let i=0;i<productDetails.length;i++) {
 					    	let product = this.lowerCaseNoSpace(productDetails[i].display)
-					    	console.log(product)
 					    	if(product === value)
 					    		return truthy = true
 						}
